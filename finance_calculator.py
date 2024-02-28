@@ -6,7 +6,7 @@ import math
 
 # Interest formulas 
 
-# calculate simple interest 
+# calculate simple interes
 def calculate_simple_interest(P, r, t):
     return P * (1 + (r/100) * t)
 
