@@ -6,12 +6,15 @@ import math
 
 # Interest formulas 
 
+# calculate simple interest
 def calculate_simple_interest(P, r, t):
     return P * (1 + (r/100) * t)
 
+# calculate compound interest
 def calculate_compound_interest(P, r, t):
     return P * math.pow ((1 + (r/100)), t)
 
+# calculate bond repayment
 def calculate_bond_repayment(P, i, n):
     monthly_interest_rate = (i/100) / 12
     return (monthly_interest_rate * P) / (1 - (1 + monthly_interest_rate)**(-n))
