@@ -6,13 +6,13 @@ import math
 
 # Interest formulas 
 
-def simple_interest(P, r, t):
+def calculate_simple_interest(P, r, t):
     return P * (1 + (r/100) * t)
 
-def compound_interest(P, r, t):
+def calculate_compound_interest(P, r, t):
     return P * math.pow ((1 + (r/100)), t)
 
-def bond_repayment(P, i, n):
+def calculate_bond_repayment(P, i, n):
     monthly_interest_rate = (i/100) / 12
     return (monthly_interest_rate * P) / (1 - (1 + monthly_interest_rate)**(-n))
 
@@ -36,12 +36,12 @@ if calculation_choice == "investment":
 
     # Intrest calculations
     if intrest_choice == "simple":
-        result = simple_interest
+        result = calculate_simple_interest
         # Print the result
         print(f"Based on the information given your investment return after {t} years will be: \n{round(P * (1 + (r/100) * t), 2)}")
     
     elif intrest_choice == "compound":
-        result = compound_interest
+        result = calculate_compound_interest
         print(f"Based on the information given your investment return after {t} will be: \n{round(P * math.pow ((1 + (r/100)), t), 2)}")
     else:
         print("Error invalid interest option chosen")
@@ -52,7 +52,7 @@ elif calculation_choice == "bond":
     i = float(input("What is the interest rate? (percentage): \n"))
     n = int(input("How many months do you plan on taking to repay the loan?: \n")) 
     
-    result = bond_repayment(P, i, n,)
+    result = calculate_bond_repayment(P, i, n,)
     
     # Print repayment result
     print(f"Based on the information you have provided your monthly repayments will be: \n£{round(result, 2)}")
